@@ -1,0 +1,26 @@
+{
+  "name": "graphql_api",
+  "version": "1.0.0",
+  "description": "making a user/developer friendly api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VirtualBlakeWillis/holbertonschool-web_graphql.git"
+  },
+  "author": "VirtualBlakeWillis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VirtualBlakeWillis/holbertonschool-web_graphql/issues"
+  },
+  "homepage": "https://github.com/VirtualBlakeWillis/holbertonschool-web_graphql#readme",
+  "dependencies": {
+    "apollo-boost": "^0.4.9",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.7.1",
+    "react-apollo": "^3.1.5"
+  }
+}

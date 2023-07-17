@@ -58,7 +58,7 @@ let ProjectType = new GraphQLObjectType({
 // Task 1, create RootQuery schema
 let RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
-  fields: {
+  fields: () => ({
     task: {
       type: TaskType,
       args: {
@@ -78,8 +78,21 @@ let RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return _.find(projects, {id: args.id});
       }
-    }
-  }
+    },
+    // Task 5, tasks & projects query
+    tasks: {
+      type: new GraphQLList(TaskType),
+      resolve(parent, args) {
+        return tasks;
+      }
+    },
+    projects: {
+      type: new GraphQLList(ProjectType),
+      resolve(parent, args) {
+        return projects;
+      }
+    },
+  })
 });
 
 module.exports = new GraphQLSchema({

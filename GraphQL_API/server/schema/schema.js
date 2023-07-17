@@ -1,6 +1,12 @@
 // schema property 
 const graphql = require('graphql');
-const { GraphQLString, GraphQLInt, GraphQLSchema, GraphQLObjectType } = graphql;
+const { 
+  GraphQLString,
+  GraphQLInt,
+  GraphQLID,
+  GraphQLSchema,
+  GraphQLObjectType,
+  } = graphql;
 const _ = require('lodash');
 
 // Task 2, dummy data for resolve function
@@ -13,7 +19,7 @@ let tasks = [
 let TaskType = new GraphQLObjectType({
   name: 'Task',
   fields: () => ({
-    id: { type: GraphQLString },
+    id: { type: GraphQLID },
     title: { type: GraphQLString },
     weight: { type: GraphQLInt },
     description: { type: GraphQLString },
@@ -27,7 +33,7 @@ let RootQuery = new GraphQLObjectType({
     task: {
       type: TaskType,
       args: {
-        id: { type: GraphQLString }
+        id: { type: GraphQLID }
       },
       resolve(parent, args) {
         // Task 2, use id to find task using lodash and return it

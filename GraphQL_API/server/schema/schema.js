@@ -9,6 +9,8 @@ const {
   GraphQLSchema,
   GraphQLObjectType,
   } = graphql;
+const Task = require('../models/task');
+const Project = require('../models/project');
 const _ = require('lodash');
 
 // Task 2, dummy data for resolve function
